@@ -1,0 +1,33 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  mylib
+* Top Cell Name: IV_curves_P
+* View Name:     schematic
+* Netlisted on:  Feb 16 13:24:47 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    IV_curves_P
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IV_curves_P Vds Vgs Vss
+*.PININFO Vds:O Vgs:I Vss:I
+MM0 Vds Vgs Vss Vss p_18 W=500.0n L=180.00n m=1
+.ENDS
+
