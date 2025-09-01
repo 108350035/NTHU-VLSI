@@ -1,0 +1,261 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  NTHU_project
+* Top Cell Name: read_out
+* View Name:     schematic
+* Netlisted on:  Apr  3 16:46:07 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    FF
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT FF CLK D Q Qbar rst VDD VSS
+*.PININFO CLK:I D:I rst:I VDD:I VSS:I Q:O Qbar:O
+MM9 Q Qbar VSS VSS n_18 W=500.00n L=180.00n
+MM8 Qbar CLK net30 VSS n_18 W=500.00n L=180.00n
+MM6 net31 CLK VSS VSS n_18 W=500.00n L=180.00n
+MM5 net4 D VSS VSS n_18 W=500.00n L=180.00n
+MM7 net8 net4 net31 VSS n_18 W=500.00n L=180.00n
+MM10 net30 net8 VSS VSS n_18 W=500.00n L=180.00n
+MM1 net4 CLK net32 VDD p_18 W=900.0n L=180.00n
+MM0 net32 D VDD VDD p_18 W=900.0n L=180.00n
+MM2 net8 CLK VDD VDD p_18 W=900.0n L=180.00n
+MM3 Qbar net8 VDD VDD p_18 W=900.0n L=180.00n
+MM4 Q Qbar VDD VDD p_18 W=900.0n L=180.00n
+MM11 Qbar rst VDD VDD p_18 W=1.8u L=180.00n
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    XNOR2_4input
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT XNOR2_4input A B OUT VDD VSS ~A ~B
+*.PININFO A:I B:I VDD:I VSS:I ~A:I ~B:I OUT:O
+MM3 OUT ~B net23 VDD p_18 W=470.00n L=180.00n
+MM2 OUT A net23 VDD p_18 W=470.00n L=180.00n
+MM1 net23 B VDD VDD p_18 W=470.00n L=180.00n
+MM0 net23 ~A VDD VDD p_18 W=470.00n L=180.00n
+MM7 OUT A net33 VSS n_18 W=470.0n L=180.00n
+MM6 OUT ~A net32 VSS n_18 W=470.0n L=180.00n
+MM5 net33 ~B VSS VSS n_18 W=470.0n L=180.00n
+MM4 net32 B VSS VSS n_18 W=470.0n L=180.00n
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    NAND2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NAND2 A B OUT VDD VSS
+*.PININFO A:I B:I VDD:I VSS:I OUT:O
+MM1 OUT B VDD VDD p_18 W=470.00n L=180.00n
+MM0 OUT A VDD VDD p_18 W=470.00n L=180.00n
+MM3 net019 A VSS VSS n_18 W=470.00n L=180.00n
+MM2 OUT B net019 VSS n_18 W=470.00n L=180.00n
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    INV
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT INV IN OUT VDD VSS
+*.PININFO IN:I VDD:I VSS:I OUT:O
+MM0 OUT IN VSS VSS n_18 W=470.0n L=180.00n
+MM1 OUT IN VDD VDD p_18 W=950.00n L=180.00n
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    XNOR2_3input
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT XNOR2_3input A B OUT VDD VSS ~B
+*.PININFO A:I B:I VDD:I VSS:I ~B:I OUT:O
+MM7 OUT A net57 VSS n_18 W=470.0n L=180.00n
+MM6 OUT ~A net58 VSS n_18 W=470.0n L=180.00n
+MM5 net57 ~B VSS VSS n_18 W=470.0n L=180.00n
+MM4 net58 B VSS VSS n_18 W=470.0n L=180.00n
+MM1 net53 B VDD VDD p_18 W=470.00n L=180.00n
+MM0 net53 ~A VDD VDD p_18 W=470.00n L=180.00n
+MM3 OUT ~B net53 VDD p_18 W=470.00n L=180.00n
+MM2 OUT A net53 VDD p_18 W=470.00n L=180.00n
+XI0 A ~A VDD VSS / INV
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    NOR3
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NOR3 A B C OUT VDD VSS
+*.PININFO A:I B:I C:I VDD:I VSS:I OUT:O
+MM4 OUT C VSS VSS n_18 W=470.0n L=180.00n
+MM1 OUT A VSS VSS n_18 W=470.0n L=180.00n
+MM0 OUT B VSS VSS n_18 W=470.0n L=180.00n
+MM5 net37 A VDD VDD p_18 W=0.95u L=180.00n
+MM3 net36 B net37 VDD p_18 W=0.95u L=180.00n
+MM2 OUT C net36 VDD p_18 W=0.95u L=180.00n
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    NAND3
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NAND3 A B C OUT VDD VSS
+*.PININFO A:I B:I C:I VDD:I VSS:I OUT:O
+MM5 net014 A VSS VSS n_18 W=470.00n L=180.00n
+MM2 OUT C net37 VSS n_18 W=470.00n L=180.00n
+MM3 net37 B net014 VSS n_18 W=470.00n L=180.00n
+MM4 OUT A VDD VDD p_18 W=470.00n L=180.00n
+MM1 OUT C VDD VDD p_18 W=470.00n L=180.00n
+MM0 OUT B VDD VDD p_18 W=470.00n L=180.00n
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    FREQ_DIV
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT FREQ_DIV clk DIV2 DIV2_bar DIV4 DIV4_bar DIV8 DIV8_bar DIV16 DIV16_bar 
++ DIV32 DIV32_bar DIV64 DIV64_bar rst VDD VSS
+*.PININFO clk:I rst:I VDD:I VSS:I DIV2:O DIV2_bar:O DIV4:O DIV4_bar:O DIV8:O 
+*.PININFO DIV8_bar:O DIV16:O DIV16_bar:O DIV32:O DIV32_bar:O DIV64:O 
+*.PININFO DIV64_bar:O
+XI36 clk net041 DIV32 DIV32_bar rst VDD VSS / FF
+XI27 clk net049 DIV64 DIV64_bar rst VDD VSS / FF
+XI24 clk net9 DIV4 DIV4_bar rst VDD VSS / FF
+XI23 clk DIV2_bar DIV2 DIV2_bar rst VDD VSS / FF
+XI26 clk net36 DIV16 DIV16_bar rst VDD VSS / FF
+XI25 clk net16 DIV8 DIV8_bar rst VDD VSS / FF
+XI29 DIV4_bar DIV2 net9 VDD VSS DIV4 DIV2_bar / XNOR2_4input
+XI34 DIV16 net016 net038 VDD VSS / NAND2
+XI30 DIV2 DIV4 net14 VDD VSS / NAND2
+XI38 net045 DIV64 net049 VDD VSS DIV64_bar / XNOR2_3input
+XI31 net14 DIV8 net16 VDD VSS DIV8_bar / XNOR2_3input
+XI35 net038 DIV32 net041 VDD VSS DIV32_bar / XNOR2_3input
+XI33 net016 DIV16_bar net36 VDD VSS DIV16 / XNOR2_3input
+XI32 DIV8_bar DIV4_bar DIV2_bar net016 VDD VSS / NOR3
+XI37 net016 DIV16 DIV32 net045 VDD VSS / NAND3
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    AND3_en_b
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT AND3_en_b A B C EN OUT VDD VSS
+*.PININFO A:I B:I C:I EN:I VDD:I VSS:I OUT:O
+MM14 OUT net031 VSS VSS n_18 W=3.2u L=180.00n
+MM13 net031 A net037 VSS n_18 W=600.00n L=180.00n
+MM11 net036 C VSS VSS n_18 W=600.00n L=180.00n
+MM12 net037 B net036 VSS n_18 W=600.00n L=180.00n
+MM19 net031 C VDD VDD p_18 W=1.2u L=180.00n
+MM18 OUT net031 VDD VDD p_18 W=4.8u L=180.00n
+MM17 net031 EN VDD VDD p_18 W=1.2u L=180.00n
+MM16 net031 B VDD VDD p_18 W=1.2u L=180.00n
+MM15 net031 A VDD VDD p_18 W=1.2u L=180.00n
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    decoder_3to8_b
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT decoder_3to8_b A B C D0 D1 D2 D3 D4 D5 D6 D7 EN VDD VSS ~A ~B ~C
+*.PININFO A:I B:I C:I EN:I VDD:I VSS:I ~A:I ~B:I ~C:I D0:O D1:O D2:O D3:O D4:O 
+*.PININFO D5:O D6:O D7:O
+XI43 ~A ~B ~C EN D0 VDD VSS / AND3_en_b
+XI54 A B ~C EN D3 VDD VSS / AND3_en_b
+XI53 ~A B ~C EN D2 VDD VSS / AND3_en_b
+XI52 A ~B ~C EN D1 VDD VSS / AND3_en_b
+XI56 A ~B C EN D5 VDD VSS / AND3_en_b
+XI58 A B C EN D7 VDD VSS / AND3_en_b
+XI55 ~A ~B C EN D4 VDD VSS / AND3_en_b
+XI57 ~A B C EN D6 VDD VSS / AND3_en_b
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    AND3_en_w
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT AND3_en_w A B C EN OUT VDD VSS
+*.PININFO A:I B:I C:I EN:I VDD:I VSS:I OUT:O
+MM14 OUT net031 VSS VSS n_18 W=3.2u L=180.00n
+MM11 net037 C VSS VSS n_18 W=470.00n L=180.00n
+MM12 net036 B net037 VSS n_18 W=470.00n L=180.00n
+MM13 net031 A net036 VSS n_18 W=470.00n L=180.00n
+MM19 net031 C VDD VDD p_18 W=1.2u L=180.00n
+MM18 OUT net031 VDD VDD p_18 W=4.8u L=180.00n
+MM17 net031 EN VDD VDD p_18 W=1.2u L=180.00n
+MM16 net031 B VDD VDD p_18 W=1.2u L=180.00n
+MM15 net031 A VDD VDD p_18 W=1.2u L=180.00n
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    decoder_3to8_w
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT decoder_3to8_w A B C D0 D1 D2 D3 D4 D5 D6 D7 EN VDD VSS ~A ~B ~C
+*.PININFO A:I B:I C:I EN:I VDD:I VSS:I ~A:I ~B:I ~C:I D0:O D1:O D2:O D3:O D4:O 
+*.PININFO D5:O D6:O D7:O
+XI43 ~A ~B ~C EN D0 VDD VSS / AND3_en_w
+XI52 A ~B ~C EN D1 VDD VSS / AND3_en_w
+XI53 ~A B ~C EN D2 VDD VSS / AND3_en_w
+XI54 A B ~C EN D3 VDD VSS / AND3_en_w
+XI55 ~A ~B C EN D4 VDD VSS / AND3_en_w
+XI56 A ~B C EN D5 VDD VSS / AND3_en_w
+XI57 ~A B C EN D6 VDD VSS / AND3_en_w
+XI58 A B C EN D7 VDD VSS / AND3_en_w
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    read_out
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT read_out BL0 BL1 BL2 BL3 BL4 BL5 BL6 BL7 clk EN rst VDD VSS WL0 WL1 
++ WL2 WL3 WL4 WL5 WL6 WL7
+*.PININFO clk:I EN:I rst:I VDD:I VSS:I BL0:O BL1:O BL2:O BL3:O BL4:O BL5:O 
+*.PININFO BL6:O BL7:O WL0:O WL1:O WL2:O WL3:O WL4:O WL5:O WL6:O WL7:O
+XI0 clk net37 net38 net41 net39 net43 net45 net47 net48 net46 net44 net42 
++ net40 rst VDD VSS / FREQ_DIV
+XI1 net37 net41 net43 BL0 BL1 BL2 BL3 BL4 BL5 BL6 BL7 EN VDD VSS net38 net39 
++ net45 / decoder_3to8_b
+XI2 net47 net46 net42 WL0 WL1 WL2 WL3 WL4 WL5 WL6 WL7 EN VDD VSS net48 net44 
++ net40 / decoder_3to8_w
+.ENDS
+
