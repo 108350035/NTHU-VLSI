@@ -1,0 +1,65 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  mylib
+* Top Cell Name: clkgen
+* View Name:     schematic
+* Netlisted on:  Feb 18 15:44:01 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    INV
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT INV A Out VDD VSS
+*.PININFO A:I VDD:I VSS:I Out:O
+MM1 Out A VSS VSS n_18 W=0.5u L=180.00n m=1
+MM0 Out A VDD VDD p_18 W=1u L=180.00n m=1
+.ENDS
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    NAND2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NAND2 A B VDD VSS Vout
+*.PININFO A:I B:I VDD:I VSS:I Vout:O
+MM1 Vout A VDD VDD p_18 W=3u L=200n
+MM0 Vout B VDD VDD p_18 W=3u L=200n
+MM3 net15 B VSS VSS n_18 W=1.5u L=200n
+MM2 Vout A net15 VSS n_18 W=1.5u L=200n
+.ENDS
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    clkgen
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT clkgen A VDD VSS clkout
+*.PININFO A:I VDD:I VSS:I clkout:O
+XI21 net25 net24 VDD VSS / INV
+XI22 net24 net23 VDD VSS / INV
+XI23 net23 net26 VDD VSS / INV
+XI24 net26 net023 VDD VSS / INV
+XI25 net023 clkout VDD VSS / INV
+XI20 net27 net25 VDD VSS / INV
+XI18 A clkout VDD VSS net27 / NAND2
+.ENDS
+
