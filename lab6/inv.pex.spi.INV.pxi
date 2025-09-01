@@ -1,0 +1,7 @@
+* File: /home/IC/lab6/INV/inv.pex.spi.INV.pxi
+* Created: Sun Feb 23 20:10:10 2025
+* 
+x_PM_INV_A N_A_MM1_g N_A_MM0_g A PM_INV_A
+x_PM_INV_OUT N_OUT_MM0_d N_OUT_MM1_d OUT PM_INV_OUT
+x_PM_INV_VSS N_VSS_MM1_b N_VSS_MM1_s VSS PM_INV_VSS
+x_PM_INV_VDD VDD N_VDD_MM0_b N_VDD_MM0_s PM_INV_VDD

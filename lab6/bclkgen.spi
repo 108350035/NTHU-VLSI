@@ -1,0 +1,79 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  mylib
+* Top Cell Name: Bclkgen
+* View Name:     schematic
+* Netlisted on:  Feb 24 09:46:28 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    NAND2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NAND2 A B VDD VSS Vout
+*.PININFO A:I B:I VDD:I VSS:I Vout:O
+MM1 Vout A VDD VDD P_18 W=1u L=180n
+MM0 Vout B VDD VDD P_18 W=1u L=180n
+MM3 net15 B VSS VSS N_18 W=2u L=180n
+MM2 Vout A net15 VSS N_18 W=2u L=180n
+.ENDS
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    INV
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT INV A Out VDD VSS
+*.PININFO A:I VDD:I VSS:I Out:O
+MM1 Out A VSS VSS N_18 W=1.5u L=180.00n m=1
+MM0 Out A VDD VDD P_18 W=3u L=180.00n m=1
+.ENDS
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    BUF
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT BUF A Out VDD VSS
+*.PININFO A:I VDD:I VSS:I Out:O
+MM0 Out net07 VSS VSS N_18 W=1u L=180.00n
+MM4 net07 A VSS VSS N_18 W=500.0n L=180n
+MM5 net07 A VDD VDD P_18 W=1u L=180.00n
+MM1 Out net07 VDD VDD P_18 W=2.67u L=180.00n
+.ENDS
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    Bclkgen
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Bclkgen VDD VSS clkout trigger
+*.PININFO VDD:I VSS:I trigger:I clkout:O
+XI0 trigger net10 VDD VSS net16 / NAND2
+XI6 net13 net12 VDD VSS / INV
+XI5 net14 net13 VDD VSS / INV
+XI4 net15 net14 VDD VSS / INV
+XI3 net16 net21 VDD VSS / INV
+XI2 net21 net15 VDD VSS / INV
+XI1 net12 net10 VDD VSS / INV
+XI7 net10 clkout VDD VSS / BUF
+.ENDS
