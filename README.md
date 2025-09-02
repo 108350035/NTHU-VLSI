@@ -91,3 +91,10 @@
 
 ![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab6/clkgen_pex_wocp.PNG)
 
+## Project
+
+### layout
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/project/read_out_layout.PNG)
+
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/project/read_out_layout2.PNG)
+
