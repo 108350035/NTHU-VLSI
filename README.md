@@ -65,4 +65,29 @@
 
 ![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab5/NAND2_LVS.PNG)
 
+### Lab 6
+
+#### bclk_gen layout
+
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab6/bclkgen_layout.PNG)
+
+#### bclk_gen(有電容) postsim 波形
+
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab6/bclkgen_pex_0.3cp.PNG)
+
+#### bclk_gen(無電容) postsim 波形
+
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab6/bclkgen_pex_wocp.PNG)
+
+#### clkgen layout
+
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab6/clkgen_layout_2.PNG)
+
+#### clkgen(有電容) postsim 波形
+
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab6/clkgen_pex_0.3cp.PNG)
+
+#### clkgen(無電容) postsim 波形
+
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab6/clkgen_pex_wocp.PNG)
 
