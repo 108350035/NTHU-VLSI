@@ -51,5 +51,18 @@
 
 ![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab4/DRC_result.PNG)
 
+## lab 5
+
+### BUF layout與LVS結果
+
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab5/BUF_layout.PNG)
+
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab5/BUF_LVS.PNG)
+
+### NAND2 layout與LVS結果
+
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab5/NAND2_layout.PNG)
+
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab5/NAND2_LVS.PNG)
 
 
