@@ -44,4 +44,12 @@
 
 ![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab3/nand2_symbol.PNG)
 
+## lab 4
+
+### INV layout與DRC結果
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab4/INV_layout.PNG)
+
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab4/DRC_result.PNG)
+
+
 
