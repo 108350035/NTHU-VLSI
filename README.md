@@ -1,5 +1,6 @@
 # NTHU-VLSI
 清大VLSI lab 練習
+
 內有詳細的hspice以及layout檔
 
 ## lab 1
@@ -33,13 +34,12 @@
 
 ## lab 3
 
-###CLK GEN電路及波形
+### CLK GEN電路及波形
 ![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab3/clkgen_schematic.PNG)
 
 ![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab3/clkgen_wv.PNG)
 
-
-###NAND2電路及symbol
+### NAND2電路及symbol
 ![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab3/nand2_schematic.PNG)
 
 ![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab3/nand2_symbol.PNG)
