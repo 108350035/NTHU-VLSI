@@ -1,5 +1,6 @@
 # NTHU-VLSI
 清大VLSI lab 練習
+內有詳細的hspice以及layout檔
 
 ## lab 1
 
@@ -12,3 +13,20 @@
 ### INV電路圖及symbol
 ![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab1/INV_schematic.PNG)
 ![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab1/INV_symbol.PNG)
+
+## lab 2
+
+### 不同的VDS跟VGS下的NMOS電流
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab2/nmos_ids.PNG)
+
+### 不同的VGS下的NMOS電流
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab2/nmos_switch.PNG)
+
+### 不同的VDS跟VGS下的PMOS電流
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab2/pmos_ids.PNG)
+
+### 不同的VGS下的PMOS電流
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab2/pmos_switch.PNG)
+
+### TPHL及TPLH
+![image](https://github.com/108350035/NTHU-VLSI/blob/main/lab2/tphl_tplh.PNG)
